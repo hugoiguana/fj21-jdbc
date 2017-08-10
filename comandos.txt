@@ -1,0 +1,30 @@
+﻿------------------------------------------------------
+
+## Criação da tabela contatos:
+
+CREATE TABLE public.contatos
+(
+    nome character(255),
+    id serial NOT NULL,
+    endereco character(255),
+    email character(255),
+    data_nascimento date,
+    PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.contatos
+    OWNER to postgres;
+------------------------------------------------------	
+## Comandos do git ##
+##URL GIT: https://github.com/hugoiguana/fj21-jdbc ##
+
+git clone https://github.com/hugoiguana/fj21-jdbc.git
+git add .
+git commit -a -m 'Adicionando projeto'
+git push orign master
+
+------------------------------------------------------	
