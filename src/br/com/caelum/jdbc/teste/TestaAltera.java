@@ -1,22 +1,23 @@
 package br.com.caelum.jdbc.teste;
 
-import java.util.List;
-
-import javax.swing.JOptionPane;
-
 import br.com.caelum.jdbc.dao.ContatoDao;
 import br.com.caelum.jdbc.modelo.Contato;
 import br.com.caelum.jdbc.modelo.Mensagem;
 
-public class TestaLista {
+public class TestaAltera {
 
 	public static void main(String[] args) {
 
 		ContatoDao contatoDao = new ContatoDao();
-
-		List<Contato> contatos = contatoDao.getContatos();
-
-		contatos.forEach(c -> Mensagem.showMensagemContato(c));
+		Contato contato = contatoDao.getUltimoCadastrado();
+		
+		Mensagem.showMensagemContato(contato);
+	
+		contato.setEndereco("Rua teste");
+		
+		contatoDao.altera(contato);
+		
+		Mensagem.showMensagemContato(contato);
 	}
 
 }

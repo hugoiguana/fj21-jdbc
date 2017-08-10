@@ -29,6 +29,14 @@ public class TesteInsere {
 		
 		contatoDao.adiciona(contato);
 		
+		contato = new Contato();
+		contato.setNome("Tiago");
+		contato.setEmail("tiago.gomees@gmail.com");
+		contato.setEndereco("Rua beleza. N13");
+		contato.setDataNascimento(Calendar.getInstance());
+		
+		contatoDao.adiciona(contato);
+		
 		JOptionPane.showMessageDialog(null, "Contato inserido com sucesso!");
 	}
 
